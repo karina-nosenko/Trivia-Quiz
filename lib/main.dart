@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'questions.dart';
+import 'content.dart';
+import 'questions_structure.dart';
 
 void main() => runApp(MaterialApp(
     home: Home()
@@ -16,6 +17,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    Quiz trivia = init();   ///run main() from content.dart file to create an object of Quiz class
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -58,7 +60,7 @@ class _HomeState extends State<Home> {
             SizedBox( height: 20,),
             Center(
               child: Text(
-                'What is the Question?',
+                trivia.questions[currQuestion].question,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize:40,

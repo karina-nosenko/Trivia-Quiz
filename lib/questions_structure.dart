@@ -1,4 +1,3 @@
-
 ///Here are classes for the structure of the question pages
 ///The Quiz built of 10 questions, while each question contains 3 answers
 ///There's only one right answer
@@ -29,20 +28,4 @@ class Quiz{
   Quiz(List q){
     this.questions = q;
   }
-}
-
-//Initializing the quiz object
-void main(){
-
-  Quiz trivia = Quiz(<Question>[Question('What',<String>['a','b','c'],2),
-                                Question('What',<String>['a','b','c'],2),
-                                Question('What',<String>['a','b','c'],2),
-                                Question('What',<String>['a','b','c'],2),
-                                Question('What',<String>['a','b','c'],2),
-                                Question('What',<String>['a','b','c'],2),
-                                Question('What',<String>['a','b','c'],2),
-                                Question('What',<String>['a','b','c'],2),
-                                Question('What',<String>['a','b','c'],2),
-                                Question('What',<String>['a','b','c'],2),]);
-
 }
