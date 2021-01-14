@@ -34,17 +34,15 @@ class Quiz{
 //Initializing the quiz object
 void main(){
 
-  Question q1 = Question('What',<String>['a','b','c'],0);
-  Question q2 = Question('What',<String>['a','b','c'],0);
-  Question q3 = Question('What',<String>['a','b','c'],0);
-  Question q4 = Question('What',<String>['a','b','c'],0);
-  Question q5 = Question('What',<String>['a','b','c'],0);
-  Question q6 = Question('What',<String>['a','b','c'],0);
-  Question q7 = Question('What',<String>['a','b','c'],0);
-  Question q8 = Question('What',<String>['a','b','c'],0);
-  Question q9 = Question('What',<String>['a','b','c'],0);
-  Question q10 = Question('What',<String>['a','b','c'],0);
-
-  Quiz trivia = Quiz(<Question>[q1,q2,q3,q4,q5,q6,q7,q8,q9,q10]);
+  Quiz trivia = Quiz(<Question>[Question('What',<String>['a','b','c'],2),
+                                Question('What',<String>['a','b','c'],2),
+                                Question('What',<String>['a','b','c'],2),
+                                Question('What',<String>['a','b','c'],2),
+                                Question('What',<String>['a','b','c'],2),
+                                Question('What',<String>['a','b','c'],2),
+                                Question('What',<String>['a','b','c'],2),
+                                Question('What',<String>['a','b','c'],2),
+                                Question('What',<String>['a','b','c'],2),
+                                Question('What',<String>['a','b','c'],2),]);
 
 }
