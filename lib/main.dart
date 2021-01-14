@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    Quiz trivia = init();   ///run main() from content.dart file to create an object of Quiz class
+    Quiz trivia = init();   ///run init() from content.dart file to create an object of Quiz class
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -60,7 +60,7 @@ class _HomeState extends State<Home> {
             SizedBox( height: 20,),
             Center(
               child: Text(
-                trivia.questions[currQuestion].question,
+                trivia.questions[currQuestion-1].question,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize:40,
@@ -80,7 +80,7 @@ class _HomeState extends State<Home> {
                 color: Colors.grey[400],
                 child: Center(
                   child: Text(
-                      'First',
+                      trivia.questions[currQuestion-1].answers[0],
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize:30,
@@ -99,7 +99,7 @@ class _HomeState extends State<Home> {
                 color: Colors.grey[400],
                 child: Center(
                   child: Text(
-                      'Second',
+                      trivia.questions[currQuestion-1].answers[1],
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize:30,
@@ -118,7 +118,7 @@ class _HomeState extends State<Home> {
                 color: Colors.grey[400],
                 child: Center(
                   child: Text(
-                      'Third',
+                      trivia.questions[currQuestion-1].answers[2],
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize:30,
