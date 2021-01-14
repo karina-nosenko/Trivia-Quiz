@@ -22,7 +22,7 @@ class Question{
 that counts the number of times the user choose the right answer*/
 class Quiz{
 
-  List <Question> questions;          //10 questions of the quiz
+  List <Question> questions = [];          //10 questions of the quiz
   static int numOfRightAnswers = 0;   //count the right answers
 
   Quiz(List q){

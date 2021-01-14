@@ -31,16 +31,6 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            if(currQuestion==10)  currQuestion=0;
-            currQuestion++;
-          });
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.red[600],
-      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 30),
         child: Column(
@@ -74,61 +64,85 @@ class _HomeState extends State<Home> {
               height: 60,
               color: Colors.grey[800],
             ),
-            SizedBox(
-              width: 300,
-              child: Container(
-                color: Colors.grey[400],
-                child: Center(
-                  child: Text(
-                      trivia.questions[currQuestion-1].answers[0],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize:30,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1,
-                      )
+            InkWell(
+              onTap: () {
+                setState(() {
+                  if(currQuestion==10)  currQuestion=0;
+                  currQuestion++;
+                });
+              },
+              child: SizedBox(
+                width: 300,
+                child: Container(
+                  color: Colors.grey[400],
+                  child: Center(
+                    child: Text(
+                        trivia.questions[currQuestion-1].answers[0],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize:30,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1,
+                        )
+                    ),
                   ),
+                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
               ),
             ),
-            SizedBox(
-              width: 300,
-              child: Container(
-                color: Colors.grey[400],
-                child: Center(
-                  child: Text(
-                      trivia.questions[currQuestion-1].answers[1],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize:30,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1,
-                      )
+            InkWell(
+              onTap: () {
+                setState(() {
+                  if(currQuestion==10)  currQuestion=0;
+                  currQuestion++;
+                });
+              },
+              child: SizedBox(
+                width: 300,
+                child: Container(
+                  color: Colors.grey[400],
+                  child: Center(
+                    child: Text(
+                        trivia.questions[currQuestion-1].answers[1],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize:30,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1,
+                        )
+                    ),
                   ),
+                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
               ),
             ),
-            SizedBox(
-              width: 300,
-              child: Container(
-                color: Colors.grey[400],
-                child: Center(
-                  child: Text(
-                      trivia.questions[currQuestion-1].answers[2],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize:30,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1,
-                      )
+            InkWell(
+              onTap: () {
+                setState(() {
+                  if(currQuestion==10)  currQuestion=0;
+                  currQuestion++;
+                });
+              },
+              child: SizedBox(
+                width: 300,
+                child: Container(
+                  color: Colors.grey[400],
+                  child: Center(
+                    child: Text(
+                        trivia.questions[currQuestion-1].answers[2],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize:30,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1,
+                        )
+                    ),
                   ),
+                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
               ),
             ),
           ],
