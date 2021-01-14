@@ -13,7 +13,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  int currQuestion = 0;
+  int currQuestion = 0;        ///indicate the current question (of ten)
+  int numOfRightAnswers = 0;   ///count the correct answers
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +68,10 @@ class _HomeState extends State<Home> {
             InkWell(
               onTap: () {
                 setState(() {
+                  ///increase the number of correct answers if the user tapped here,
+                  ///and it's the correct answer to the current question
+                  if(trivia.questions[currQuestion-1].rightAnswer==0)
+                    numOfRightAnswers++;
                   if(currQuestion==10)  currQuestion=0;
                   currQuestion++;
                 });
@@ -94,6 +99,10 @@ class _HomeState extends State<Home> {
             InkWell(
               onTap: () {
                 setState(() {
+                  ///increase the number of correct answers if the user tapped here,
+                  ///and it's the correct answer to the current question
+                  if(trivia.questions[currQuestion-1].rightAnswer==1)
+                    numOfRightAnswers++;
                   if(currQuestion==10)  currQuestion=0;
                   currQuestion++;
                 });
@@ -121,6 +130,10 @@ class _HomeState extends State<Home> {
             InkWell(
               onTap: () {
                 setState(() {
+                  ///increase the number of correct answers if the user tapped here,
+                  ///and it's the correct answer to the current question
+                  if(trivia.questions[currQuestion-1].rightAnswer==2)
+                    numOfRightAnswers++;
                   if(currQuestion==10)  currQuestion=0;
                   currQuestion++;
                 });
