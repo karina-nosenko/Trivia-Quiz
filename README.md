@@ -1,3 +1,3 @@
 # trivia_quiz
 
-This is an short trivia quiz made with Flutter.
+This is a short trivia quiz made with Flutter.
