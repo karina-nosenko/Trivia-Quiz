@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'content.dart';
 import 'questions_structure.dart';
+import 'result_page.dart';
 
 void main() => runApp(MaterialApp(
-    home: Home()
+    routes: {
+      '/':(context) => Home(),
+      '/ResultPage':(context) => Result(),
+    },
 ));
 
 class Home extends StatefulWidget {
@@ -69,8 +73,9 @@ class _HomeState extends State<Home> {
             InkWell(
               onTap: () {
                 setState(() {
-                  ///increase the number of correct answers if the user tapped here,
-                  ///and it's the correct answer to the current question
+                  Navigator.pushReplacementNamed(context, '/ResultPage');
+                  ///user tapped here and it's the correct answer to the current question:
+                  ///increase the value of the number of correct answers
                   if(trivia.questions[currQuestion].rightAnswer==0)
                     numOfRightAnswers++;
                   if(currQuestion==9)  currQuestion=0;
@@ -100,8 +105,8 @@ class _HomeState extends State<Home> {
             InkWell(
               onTap: () {
                 setState(() {
-                  ///increase the number of correct answers if the user tapped here,
-                  ///and it's the correct answer to the current question
+                  ///user tapped here and it's the correct answer to the current question:
+                  ///increase the value of the number of correct answers
                   if(trivia.questions[currQuestion].rightAnswer==1)
                     numOfRightAnswers++;
                   if(currQuestion==9)  currQuestion=0;
@@ -131,8 +136,8 @@ class _HomeState extends State<Home> {
             InkWell(
               onTap: () {
                 setState(() {
-                  ///increase the number of correct answers if the user tapped here,
-                  ///and it's the correct answer to the current question
+                  ///user tapped here and it's the correct answer to the current question:
+                  ///increase the value of the number of correct answers
                   if(trivia.questions[currQuestion].rightAnswer==2)
                     numOfRightAnswers++;
                   if(currQuestion==9)  currQuestion=0;
