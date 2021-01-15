@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
+import 'questions_structure.dart';
 
-void main() => runApp( MaterialApp(
-  routes: {
-    '/':(context) => Result(),
-    '/Home':(context) => Home(),
-  },
-));
+///This page displays the result of the quiz:
+///the number of right answers the user did.
+///And also has an option to start the quiz over
 
 class Result extends StatefulWidget {
   @override
@@ -19,6 +16,7 @@ class _ResultState extends State<Result> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      ///display the top bar of that page
       appBar: AppBar(
         title: Text(
             'Trivia Quiz',
@@ -29,24 +27,17 @@ class _ResultState extends State<Result> {
             )
         ),
         centerTitle: true,
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.red[600],
       ),
+      ///display the body of that page
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget> [
-            SizedBox( height: 60,),
-            Center(
-              child: Text(
-                '',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize:25,
-                ),
-              ),
-            ),
-            SizedBox( height: 20,),
+            SizedBox( height: 105,),
+            ///display the header "Result"
             Center(
               child: Text(
                 'Result:',
@@ -59,13 +50,16 @@ class _ResultState extends State<Result> {
                 ),
               ),
             ),
+            ///display the dividing line between the header and the result of the quiz
             Divider(
               height: 60,
               color: Colors.grey[800],
+              thickness: 1.0,
             ),
+            ///display the number of right answers the user did
             Center(
               child: Text(
-                '8/10',
+                '${Quiz.numOfRightAnswers}/10',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize:35,
@@ -74,11 +68,11 @@ class _ResultState extends State<Result> {
               ),
             ),
             SizedBox( height: 100,),
+            ///display button to start the quiz over
             FlatButton.icon(
               onPressed: () {
-                //Navigator.popUntil(context,ModalRoute.withName('/Home'));
-                Navigator.pushReplacementNamed(context, '/Home');
-                //Navigator.pop(context);
+                Quiz.numOfRightAnswers=0; ///zero the number of right answers before returning
+                Navigator.pop(context);
               },
               icon: Icon(
                 Icons.autorenew_outlined,

@@ -3,7 +3,11 @@ import 'content.dart';
 import 'questions_structure.dart';
 import 'result_page.dart';
 
+///This page displays the screen of questions and options to answer to the quiz,
+///and all the interactions as well
+
 void main() => runApp(MaterialApp(
+  ///appropriate keys for routing to different screens
     routes: {
       '/':(context) => Home(),
       '/ResultPage':(context) => Result(),
@@ -18,12 +22,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   int currQuestion = 0;        ///indicate the current question (of ten)
-  int numOfRightAnswers = 0;   ///count the correct answers
 
   @override
   Widget build(BuildContext context) {
-    Quiz trivia = init();   ///run init() from content.dart file to create an object of Quiz class
+
+    Quiz trivia = init();     ///run init() from content.dart file to create an object of Quiz class
+
     return Scaffold(
+      ///display the top bar of that page
       appBar: AppBar(
         title: Text(
             'Trivia Quiz',
@@ -36,12 +42,14 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
+      ///display the body of that page
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget> [
             SizedBox( height: 60,),
+            ///display the number of the current question
             Center(
               child: Text(
                 '${currQuestion+1}/10',
@@ -53,6 +61,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox( height: 20,),
+            ///display the current question
             Center(
               child: Text(
                 trivia.questions[currQuestion].question,
@@ -65,20 +74,27 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
+            ///display the dividing line between the question and the options for answer
             Divider(
               height: 60,
               color: Colors.grey[800],
               thickness: 1.0,
             ),
+            ///display the first answer option
             InkWell(
               onTap: () {
                 setState(() {
-                  Navigator.pushReplacementNamed(context, '/ResultPage');
-                  ///user tapped here and it's the correct answer to the current question:
-                  ///increase the value of the number of correct answers
+                  ///if the user tapped here and it's the correct answer to the current question
+                  /// then increase the value of the number of correct answers
                   if(trivia.questions[currQuestion].rightAnswer==0)
-                    numOfRightAnswers++;
-                  if(currQuestion==9)  currQuestion=0;
+                    Quiz.numOfRightAnswers++;
+                  ///zero the number of the current question if we get to the last question (10)
+                  ///and navigate to the result page
+                  ///otherwise, increase number of the current question
+                  if(currQuestion==9) {
+                    currQuestion=0;
+                    Navigator.pushNamed(context, '/ResultPage');
+                  }
                   else  currQuestion++;
                 });
               },
@@ -102,14 +118,21 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
+            ///display the second answer option
             InkWell(
               onTap: () {
                 setState(() {
-                  ///user tapped here and it's the correct answer to the current question:
-                  ///increase the value of the number of correct answers
+                  ///if the user tapped here and it's the correct answer to the current question
+                  /// then increase the value of the number of correct answers
                   if(trivia.questions[currQuestion].rightAnswer==1)
-                    numOfRightAnswers++;
-                  if(currQuestion==9)  currQuestion=0;
+                    Quiz.numOfRightAnswers++;
+                  ///zero the number of the current question if we get to the last question (10)
+                  ///and navigate to the result page
+                  ///otherwise, increase number of the current question
+                  if(currQuestion==9) {
+                    currQuestion=0;
+                    Navigator.pushNamed(context, '/ResultPage');
+                  }
                   else  currQuestion++;
                 });
               },
@@ -133,14 +156,21 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
+            ///display the third answer option
             InkWell(
               onTap: () {
                 setState(() {
-                  ///user tapped here and it's the correct answer to the current question:
-                  ///increase the value of the number of correct answers
+                  ///if the user tapped here and it's the correct answer to the current question
+                  /// then increase the value of the number of correct answers
                   if(trivia.questions[currQuestion].rightAnswer==2)
-                    numOfRightAnswers++;
-                  if(currQuestion==9)  currQuestion=0;
+                    Quiz.numOfRightAnswers++;
+                  ///zero the number of the current question if we get to the last question (10)
+                  ///and navigate to the result page
+                  ///otherwise, increase number of the current question
+                  if(currQuestion==9) {
+                    currQuestion=0;
+                    Navigator.pushNamed(context, '/ResultPage');
+                  }
                   else  currQuestion++;
                 });
               },
@@ -150,7 +180,6 @@ class _HomeState extends State<Home> {
                   color: Colors.grey[400],
                   child: Center(
                     child: Text(
-                        //'a',
                         trivia.questions[currQuestion].answers[2],
                         textAlign: TextAlign.center,
                         style: TextStyle(

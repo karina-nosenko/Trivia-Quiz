@@ -4,6 +4,8 @@ import 'questions_structure.dart';
 /*Initializing the quiz object*/
 Quiz init(){
 
+  ///The quiz must be initialized with 10 questions with 3 answers for each.
+
   Quiz trivia = Quiz(<Question>[
     Question('What was the original name for Facebook?',
         <String>['Thefacebook','Facepad','Friendster'],0),
