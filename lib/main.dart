@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
             SizedBox( height: 60,),
             Center(
               child: Text(
-                '$currQuestion/10',
+                '${currQuestion+1}/10',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize:25,
@@ -51,10 +51,10 @@ class _HomeState extends State<Home> {
             SizedBox( height: 20,),
             Center(
               child: Text(
-                trivia.questions[currQuestion-1].question,
+                trivia.questions[currQuestion].question,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize:40,
+                  fontSize:39,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,
                   color: Colors.black,
@@ -64,16 +64,17 @@ class _HomeState extends State<Home> {
             Divider(
               height: 60,
               color: Colors.grey[800],
+              thickness: 1.0,
             ),
             InkWell(
               onTap: () {
                 setState(() {
                   ///increase the number of correct answers if the user tapped here,
                   ///and it's the correct answer to the current question
-                  if(trivia.questions[currQuestion-1].rightAnswer==0)
+                  if(trivia.questions[currQuestion].rightAnswer==0)
                     numOfRightAnswers++;
-                  if(currQuestion==10)  currQuestion=0;
-                  currQuestion++;
+                  if(currQuestion==9)  currQuestion=0;
+                  else  currQuestion++;
                 });
               },
               child: SizedBox(
@@ -82,7 +83,7 @@ class _HomeState extends State<Home> {
                   color: Colors.grey[400],
                   child: Center(
                     child: Text(
-                        trivia.questions[currQuestion-1].answers[0],
+                        trivia.questions[currQuestion].answers[0],
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize:30,
@@ -101,10 +102,10 @@ class _HomeState extends State<Home> {
                 setState(() {
                   ///increase the number of correct answers if the user tapped here,
                   ///and it's the correct answer to the current question
-                  if(trivia.questions[currQuestion-1].rightAnswer==1)
+                  if(trivia.questions[currQuestion].rightAnswer==1)
                     numOfRightAnswers++;
-                  if(currQuestion==10)  currQuestion=0;
-                  currQuestion++;
+                  if(currQuestion==9)  currQuestion=0;
+                  else  currQuestion++;
                 });
               },
               child: SizedBox(
@@ -113,7 +114,7 @@ class _HomeState extends State<Home> {
                   color: Colors.grey[400],
                   child: Center(
                     child: Text(
-                        trivia.questions[currQuestion-1].answers[1],
+                        trivia.questions[currQuestion].answers[1],
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize:30,
@@ -132,10 +133,10 @@ class _HomeState extends State<Home> {
                 setState(() {
                   ///increase the number of correct answers if the user tapped here,
                   ///and it's the correct answer to the current question
-                  if(trivia.questions[currQuestion-1].rightAnswer==2)
+                  if(trivia.questions[currQuestion].rightAnswer==2)
                     numOfRightAnswers++;
-                  if(currQuestion==10)  currQuestion=0;
-                  currQuestion++;
+                  if(currQuestion==9)  currQuestion=0;
+                  else  currQuestion++;
                 });
               },
               child: SizedBox(
@@ -144,7 +145,8 @@ class _HomeState extends State<Home> {
                   color: Colors.grey[400],
                   child: Center(
                     child: Text(
-                        trivia.questions[currQuestion-1].answers[2],
+                        //'a',
+                        trivia.questions[currQuestion].answers[2],
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize:30,

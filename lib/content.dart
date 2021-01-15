@@ -4,16 +4,27 @@ import 'questions_structure.dart';
 /*Initializing the quiz object*/
 Quiz init(){
 
-  Quiz trivia = Quiz(<Question>[Question('1What',<String>['1a','1b','1c'],2),
-    Question('2What',<String>['2a','2b','2c'],2),
-    Question('3What',<String>['3a','3b','3c'],2),
-    Question('4What',<String>['4a','4b','4c'],2),
-    Question('5What',<String>['5a','5b','5c'],2),
-    Question('6What',<String>['6a','6b','6c'],2),
-    Question('7What',<String>['7a','7b','7c'],2),
-    Question('8What',<String>['8a','8b','8c'],2),
-    Question('9What',<String>['9a','9b','9c'],2),
-    Question('10What',<String>['10a','10b','10c'],2),]);
+  Quiz trivia = Quiz(<Question>[
+    Question('What was the original name for Facebook?',
+        <String>['Thefacebook','Facepad','Friendster'],0),
+    Question('Which country produces the most coffee?',
+        <String>['Canada','Ireland','Brazil'],2),
+    Question('Who was the first woman to win a Nobel Prize?',
+        <String>['Donna Strickland','Marie Curie','Maria Mayer'],1),
+    Question('What plant the Aztecs worshipped?',
+        <String>['Squashe','Potato','Maize'],2),
+    Question('Which nation invented hotdogs?',
+        <String>['Croatia','Germany','Denmark'],1),
+    Question('What is the largest desert on Earth?',
+        <String>['Sahara','Arabian','Antarctica'],2),
+    Question('What is the largest continent in the world?',
+        <String>['Asia','Antarctica','Africa'],0),
+    Question('Where did the band AC/DC originate?',
+        <String>['USA','Australia','Scotland'],1),
+    Question('How many Marvel Universe films are there?',
+        <String>['21','22','23'],2),
+    Question('Which river is the longest in the world?',
+        <String>['The Nile','Yangtze','Amazon'],0),]);
 
   return trivia;
 }
